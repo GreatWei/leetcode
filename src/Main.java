@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,6 +21,25 @@ public class Main {
 //            listNode = listNode.next;
 //        }while (listNode!=null);
     //    Solution.lengthOfLongestSubstring("asdc");
-        System.out.println( Solution.lengthOfLongestSubstring("pwwkew"));
+    //    System.out.println( Solution.lengthOfLongestSubstring("pwwkew"));
+     //  System.out.println( Solution.lengthOfLongestSubstring("bbbbb"));
+      //  System.out.println( Solution.lengthOfLongestSubstring("dvdf"));
+      //  System.out.println( Solution.lengthOfLongestSubstring("abcabcbb"));
+     //   System.out.println( Solution.lengthOfLongestSubstring("abcabcbb"));
+
+//        Set<Character> set = new HashSet<>();
+//        set.add('d');
+//        System.out.println(set.add('d'));
+//       System.out.println(set.contains('d'));
+     //   int[] a1={1,3};
+     //   int[] a2={2};
+       // System.out.println( Solution.findMedianSortedArrays(a1,a2));
+//        System.out.println(Solution.longestPalindrome("babad"));
+//        System.out.println(Solution.longestPalindrome("bb"));
+//        System.out.println(Solution.longestPalindrome("aaabaaaa"));
+//        System.out.println(Solution.longestPalindrome("babadada"));
+//        System.out.println(Solution.longestPalindrome("a"));
+//        System.out.println(Solution.longestPalindrome(""));
+        System.out.println(Solution.convert("a",3));
     }
 }
