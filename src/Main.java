@@ -18,12 +18,6 @@ public class Main {
 //            listNode = listNode.next;
 //        }while (listNode!=null);
     //    Solution.lengthOfLongestSubstring("asdc");
-       // System.out.println( Solution.lengthOfLongestSubstring("pwwkew"));
-        String s = "LEETCODEISHIRING";
-        System.out.println(s.length());
-       for(int i=0;i<s.length();i++){
-           System.out.println(i+":"+s.charAt(i));
-       }
-
+        System.out.println( Solution.lengthOfLongestSubstring("pwwkew"));
     }
 }

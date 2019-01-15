@@ -1,31 +1,192 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Solution {
 
+    /**
+     * 最长子串
+     */
     public static int lengthOfLongestSubstring(String s) {
-        char strs[] = s.toCharArray();
-        int max = 1;
-        int count = 1;
-        char temp = strs[0];
-
-        for (int i = 0; i < strs.length - 1; i++)
-            for (int j = i + 1; j < strs.length; j++) {
-                System.out.println("strs:"+strs[j]);
-                System.out.println("temp:"+temp);
-                System.out.println("strs[j]!= temp:"+(strs[j]!= temp));
-                if (strs[j]!= temp) {
-                    count++;
-                  //  max=count;
-                } else {
-                    if (max<count){
-                        max=count;
-                    }
-                        count = 1;
-                        temp = strs[j];
-                        i = j;
+        int max = 0;
+        if (s.length() > 0) {
+            int count;
+            max = 1;
+            StringBuilder temp;
+            for (int i = 0; i < s.length() - 1; i++) {
+                count = 1;
+                temp = new StringBuilder(String.valueOf(s.charAt(i)));
+                for (int j = i + 1; j < s.length(); j++) {
+                    int index = temp.indexOf(String.valueOf(s.charAt(j)));
+                    if (index == -1) {
+                        temp.append(s.charAt(j));
+                        count++;
+                    } else {
+                        i = i + index;
                         break;
-
+                    }
                 }
-               // System.out.println("max:"+max);
+                if (max < count) {
+                    max = count;
+                }
             }
+        }
+
         return max;
+    }
+
+    /**
+     * 效率为上4倍
+     */
+    public int lengthOfLongestSubstrings(String s) {
+        int i = 0, j = 0, max = 0;
+
+        for (Set<Character> seen = new HashSet<Character>(); j < s.length(); j++)
+            if (!seen.add(s.charAt(j)))
+                for (max = Math.max(max, j - i); s.charAt(i++) != s.charAt(j); seen.remove(s.charAt(i - 1))) ;
+
+        return Math.max(max, j - i);
+    }
+
+    /**
+     * a1+a2=target
+     */
+    public static int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        if (nums.length >= 3) {
+            for (int i = 0; i < nums.length - 1; i++)
+                for (int j = i + 1; j < nums.length; j++) {
+                    if (nums[i] + nums[j] == target) {
+                        result[0] = i;
+                        result[1] = j;
+                    }
+                }
+        } else {
+            result[0] = 0;
+            result[1] = 1;
+        }
+
+
+        return result;
+    }
+
+    /**
+     * 中位数
+     */
+    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int nums1Len = nums1.length;
+        int nums2Len = nums2.length;
+        int mindLen = (nums1Len + nums2Len) / 2 + 1;
+        int[] all = new int[mindLen];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        double mid = 0;
+        for (; i < nums1Len && j < nums2Len && k < mindLen; ) {
+            if (nums1[i] > nums2[j]) {
+                all[k++] = nums2[j++];
+            } else {
+                all[k++] = nums1[i++];
+            }
+        }
+        while (i < nums1Len && k < mindLen) {
+            all[k++] = nums1[i++];
+        }
+
+        while (j < nums2Len && k < mindLen) {
+            all[k++] = nums2[j++];
+        }
+
+        if ((nums1Len + nums2Len) % 2 == 0) {
+            mid = (all[mindLen - 2] + all[mindLen - 1]) / 2.0;
+        } else {
+            mid = all[mindLen - 1];
+        }
+
+        return mid;
+    }
+
+    /**
+     * 最长回文子串
+     */
+    public static String longestPalindrome(String s) {
+
+        if (s == null || s.length() < 1) return "";
+        int length = s.length();
+        boolean flag;
+        int start = 0;
+        int end = 0;
+        for (int i = 0; i < length && (end - start + 1) <= (length - i); i++) {
+            for (int z = length - 1; z >= i && (end - start + 1) < (z - i + 1); z--) {
+                flag = true;
+                for (int k = i, e = z; k < e; k++, e--) {
+                    if (s.charAt(k) != s.charAt(e)) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag && (end - start) < (z - i + 1)) {
+                    start = i;
+                    end = z;
+                }
+            }
+
+        }
+        return s.substring(start, end + 1);
+    }
+
+    public String longestPalindromes(String s) {
+        if (s == null || s.length() < 1) return "";
+        int start = 0, end = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandAroundCenter(s, i, i);
+            int len2 = expandAroundCenter(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
+        }
+        return s.substring(start, end + 1);
+    }
+
+    private int expandAroundCenter(String s, int left, int right) {
+        int L = left, R = right;
+        while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
+            L--;
+            R++;
+        }
+        return R - L - 1;
+    }
+
+    /***
+     * z字形
+     *
+     *
+     *
+     * */
+    public static String convert(String s, int numRows) {
+        if (numRows <= 1) return s;
+        StringBuilder[] stringBuilders = new StringBuilder[numRows];
+        for (int i = 0; i < numRows && s.length() > i; i++) {
+            stringBuilders[i] = new StringBuilder();
+            if ((numRows - i - 1) == (numRows - 1) || i == (numRows - 1)) {
+                for (int j = i; j < s.length(); ) {
+                    //    System.out.println(j+"j:"+s.charAt(j));
+                    stringBuilders[i].append(s.charAt(j));
+                    j = j + 2 * (numRows - 1);
+                }
+            } else {
+                stringBuilders[i].append(s.charAt(i));
+                int a = 2 * (numRows - i - 1);
+                for (int j = i + a; j < s.length(); ) {
+                    stringBuilders[i].append(s.charAt(j));
+                    a = 2 * (numRows - 1) - a;
+                    j = j + a;
+                }
+            }
+        }
+        for (int i = 1; i < numRows; i++)
+            stringBuilders[0].append(stringBuilders[i]==null?"":stringBuilders[i]);
+        return stringBuilders[0].toString();
     }
 }
