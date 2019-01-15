@@ -159,7 +159,7 @@ public class Solution {
     }
 
     /***
-     * z字形
+     * N字形
      *
      *
      *
@@ -186,7 +186,60 @@ public class Solution {
             }
         }
         for (int i = 1; i < numRows; i++)
-            stringBuilders[0].append(stringBuilders[i]==null?"":stringBuilders[i]);
+            stringBuilders[0].append(stringBuilders[i] == null ? "" : stringBuilders[i]);
         return stringBuilders[0].toString();
+    }
+
+    /***
+     *
+     * 整数反转
+     *
+     * */
+    public static int reverse(int x) {
+        String max = String.valueOf(Integer.MAX_VALUE);
+        String min = String.valueOf(Integer.MIN_VALUE);
+        String temp = String.valueOf(x);
+        StringBuilder builder = new StringBuilder();
+        int reuslt = 0;
+        boolean flag = true;
+        if ((temp.length() < max.length() && x >= 0) || (temp.length() < min.length() && x < 0)) {
+            flag = true;
+        } else {
+            if (x >= 0) {
+                for (int i = temp.length() - 1; i >= 0; i--) {
+                  //  System.out.println(temp.charAt(i)+","+max.charAt(max.length() - i-1));
+                    if (temp.charAt(i) > max.charAt(max.length() - i-1)) {
+                        flag = false;
+                        break;
+                    }
+                    if (temp.charAt(i) < max.charAt(max.length() - i-1)) {
+                        break;
+                    }
+                }
+            } else {
+                for (int i = temp.length() - 1; i > 0; i--) {
+                    if (temp.charAt(i) > min.charAt(min.length() - i)) {
+                        flag = false;
+                        break;
+                    }
+                    if (temp.charAt(i) < min.charAt(min.length() - i)) {
+                        break;
+                    }
+
+                }
+            }
+        }
+        if (flag) {
+            for (int i = temp.length() - 1; i > 0; i--) {
+                builder.append(temp.charAt(i));
+            }
+            if (x >= 0) {
+                builder.append(temp.charAt(0));
+                reuslt = Integer.valueOf(builder.toString());
+            } else {
+                reuslt = -Integer.valueOf(builder.toString());
+            }
+        }
+        return reuslt;
     }
 }

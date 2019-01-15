@@ -40,6 +40,8 @@ public class Main {
 //        System.out.println(Solution.longestPalindrome("babadada"));
 //        System.out.println(Solution.longestPalindrome("a"));
 //        System.out.println(Solution.longestPalindrome(""));
-        System.out.println(Solution.convert("a",3));
+     //   System.out.println(Solution.convert("a",3));
+    //    System.out.println(Solution.reverse(123));
+        System.out.println(Solution.reverse(-2147483412));
     }
 }
