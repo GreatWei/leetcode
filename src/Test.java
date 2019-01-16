@@ -1,4 +1,6 @@
 import java.text.NumberFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Test {
     public static void main(String[] args) {
@@ -16,5 +18,11 @@ public class Test {
         nf.setGroupingUsed(false);
         System.out.println(nf.format(Math.pow(2,31)));
         System.out.println(min);
+        Pattern pattern=   Pattern.compile("^\\d+");
+        Matcher matcher = pattern.matcher("   42".trim());
+        System.out.println(matcher.matches());
+        System.out.println(Pattern.matches("^[0-9]+([^0-9]+)?|[\\-\\+][0-9]+([^0-9]+)?","  -195454lsfgsdf".trim()));
+        System.out.println(" sfd s  d ".replaceAll(" ",""));
+
     }
 }
