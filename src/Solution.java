@@ -255,7 +255,6 @@ public class Solution {
         boolean flag1 = Pattern.matches("^[0-9]+([^0-9]+)?", str);
         boolean flag2 = Pattern.matches("^[\\-\\+][0-9]+([^0-9]+)?", str);
         String temp ="0123456789";
-        String pre="";
         String max=String.valueOf(Integer.MAX_VALUE);
         String min=String.valueOf(Integer.MIN_VALUE);
         StringBuilder stringBuilder = new StringBuilder();
@@ -264,7 +263,6 @@ public class Solution {
         }
         if (flag2){
             i=1;
-            pre=str.charAt(0)+"";
         }
         for (;i<str.length();i++){
             if(temp.indexOf(str.charAt(i))==-1){
