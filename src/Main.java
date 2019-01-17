@@ -42,6 +42,14 @@ public class Main {
 //        System.out.println(Solution.longestPalindrome(""));
      //   System.out.println(Solution.convert("a",3));
     //    System.out.println(Solution.reverse(123));
-        System.out.println(Solution.reverse(-2147483412));
+       // System.out.println(Solution.reverse(-2147483412));
+      //  System.out.println(Solution.myAtoi("-2147483649jk5"));
+      //  System.out.println(Solution.myAtoi("         -1120515078t4"));
+     //   System.out.println(Solution.myAtoi("3.14159"));
+        //"1095502006p8"
+        System.out.println(Solution.myAtoi("-2147483649"));
+        System.out.println(Solution.myAtoi("    -88827 6    U"));
+      //  System.out.println(Solution.myAtoi("   +0 123"));
+
     }
 }
