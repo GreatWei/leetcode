@@ -248,32 +248,123 @@ public class Solution {
     /**
      * 将字符串转换成整数。
      */
-    public int myAtoi(String str) {
-        str = str.replaceAll(" ", "");
+    public static int myAtoi(String str) {
+        str = str.trim();
+        // System.out.println(str);
         int reuslt = 0;
         int i = 0;
-        boolean flag1 = Pattern.matches("^[0-9]+([^0-9]+)?", str);
-        boolean flag2 = Pattern.matches("^[\\-\\+][0-9]+([^0-9]+)?", str);
-        String temp ="0123456789";
-        String max=String.valueOf(Integer.MAX_VALUE);
-        String min=String.valueOf(Integer.MIN_VALUE);
+        boolean flag1 = Pattern.matches("^[0-9]+([\\s\\S]+)?", str);
+        boolean flag2 = Pattern.matches("^[\\-\\+][0-9]+([\\s\\S]+)?", str);
+        String temp = "0123456789";
+        String pre = "";
+        String max = String.valueOf(Integer.MAX_VALUE);
+        String min = String.valueOf(Integer.MIN_VALUE);
         StringBuilder stringBuilder = new StringBuilder();
+
+        //System.out.println(flag1+","+flag2);
         if (!flag1 && !flag2) {
             return reuslt;
         }
-        if (flag2){
-            i=1;
+        if (flag2) {
+            pre = str.charAt(i) + "";
+            i = 1;
+            //  System.out.println("pre:"+pre);
         }
-        for (;i<str.length();i++){
-            if(temp.indexOf(str.charAt(i))==-1){
+        for (; i < str.length(); i++) {
+            if (temp.indexOf(str.charAt(i)) == -1) {
                 break;
+            }
+            if (stringBuilder.length() == 0 && '0' == str.charAt(i)) {
+                continue;
             }
             stringBuilder.append(str.charAt(i));
         }
+        //  System.out.println(stringBuilder.toString());
 
-     //   if (stringBuilder.length()>Integer.MAX_VALUE)
+        if (stringBuilder.length() > max.length() || stringBuilder.length() > (min.length() - pre.length())) {
+            if (pre.equals("+") || pre.equals(""))
+                reuslt = Integer.MAX_VALUE;
+            else {
+                reuslt = Integer.MIN_VALUE;
+            }
+        } else if (stringBuilder.length() == max.length() || stringBuilder.length() == (min.length() - pre.length())) {
+            flag1 = true;
+            if (pre.equals("+") || pre.equals("")) {
+                for (int j = 0; j < stringBuilder.length(); j++) {
+                    if (stringBuilder.toString().charAt(j) > max.charAt(j)) {
+                        flag1 = false;
+                        break;
+                    }
+                    if (stringBuilder.toString().charAt(j) < max.charAt(j)) {
+                        break;
+                    }
+                }
+                if (flag1) {
+                    reuslt = Integer.valueOf(pre + stringBuilder.toString());
+                } else {
+                    reuslt = Integer.MAX_VALUE;
+                }
+
+            } else {
+                for (int j = 0; j < stringBuilder.length(); j++) {
+                    if (stringBuilder.toString().charAt(j) > min.charAt(j + 1)) {
+                        flag1 = false;
+                        break;
+                    }
+                    if (stringBuilder.toString().charAt(j) < min.charAt(j + 1)) {
+                        break;
+                    }
+                }
+                if (flag1) {
+                    //  System.out.println("min:"+Integer.MIN_VALUE);
+                    reuslt = Integer.valueOf(pre + stringBuilder.toString());
+                } else {
+                    reuslt = Integer.MIN_VALUE;
+                }
+            }
+
+        } else {
+            reuslt = Integer.valueOf((pre + stringBuilder).equals("") || "+-".indexOf(pre + stringBuilder) != -1 ? "0" : (pre + stringBuilder));
+        }
 
 
         return reuslt;
+    }
+
+    public static boolean isPalindrome(int x) {
+        boolean flag = true;
+        if (x < 0) {
+            return false;
+        }
+        String s = String.valueOf(x);
+        int l = 0;
+        int r = s.length() - 1;
+        while (l < r) {
+            if (s.charAt(l++) != s.charAt(r--)) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    public static int maxArea(int[] height) {
+        int max = 0;
+        int l=0;
+        int r=height.length-1;
+       while (l<r){
+           max = Math.max(max,Math.min(height[l],height[r])*(r-l));
+           if(height[l]>height[r]){
+               r--;
+           }else {
+               l++;
+           }
+       }
+        return max;
+    }
+
+    public static String longestCommonPrefix(String[] strs) {
+
+        return null;
     }
 }
