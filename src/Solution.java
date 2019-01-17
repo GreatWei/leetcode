@@ -1,5 +1,7 @@
+import java.lang.reflect.Parameter;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public class Solution {
 
@@ -207,12 +209,12 @@ public class Solution {
         } else {
             if (x >= 0) {
                 for (int i = temp.length() - 1; i >= 0; i--) {
-                  //  System.out.println(temp.charAt(i)+","+max.charAt(max.length() - i-1));
-                    if (temp.charAt(i) > max.charAt(max.length() - i-1)) {
+                    //  System.out.println(temp.charAt(i)+","+max.charAt(max.length() - i-1));
+                    if (temp.charAt(i) > max.charAt(max.length() - i - 1)) {
                         flag = false;
                         break;
                     }
-                    if (temp.charAt(i) < max.charAt(max.length() - i-1)) {
+                    if (temp.charAt(i) < max.charAt(max.length() - i - 1)) {
                         break;
                     }
                 }
@@ -240,6 +242,38 @@ public class Solution {
                 reuslt = -Integer.valueOf(builder.toString());
             }
         }
+        return reuslt;
+    }
+
+    /**
+     * 将字符串转换成整数。
+     */
+    public int myAtoi(String str) {
+        str = str.replaceAll(" ", "");
+        int reuslt = 0;
+        int i = 0;
+        boolean flag1 = Pattern.matches("^[0-9]+([^0-9]+)?", str);
+        boolean flag2 = Pattern.matches("^[\\-\\+][0-9]+([^0-9]+)?", str);
+        String temp ="0123456789";
+        String max=String.valueOf(Integer.MAX_VALUE);
+        String min=String.valueOf(Integer.MIN_VALUE);
+        StringBuilder stringBuilder = new StringBuilder();
+        if (!flag1 && !flag2) {
+            return reuslt;
+        }
+        if (flag2){
+            i=1;
+        }
+        for (;i<str.length();i++){
+            if(temp.indexOf(str.charAt(i))==-1){
+                break;
+            }
+            stringBuilder.append(str.charAt(i));
+        }
+
+     //   if (stringBuilder.length()>Integer.MAX_VALUE)
+
+
         return reuslt;
     }
 }
