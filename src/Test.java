@@ -16,5 +16,7 @@ public class Test {
         nf.setGroupingUsed(false);
         System.out.println(nf.format(Math.pow(2,31)));
         System.out.println(min);
+
+        System.out.println(1+"  1".trim());
     }
 }
