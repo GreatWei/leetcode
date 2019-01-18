@@ -1,4 +1,4 @@
-
+import java.lang.reflect.Parameter;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -250,7 +250,7 @@ public class Solution {
      */
     public static int myAtoi(String str) {
         str = str.trim();
-       // System.out.println(str);
+        // System.out.println(str);
         int reuslt = 0;
         int i = 0;
         boolean flag1 = Pattern.matches("^[0-9]+([\\s\\S]+)?", str);
@@ -268,18 +268,18 @@ public class Solution {
         if (flag2) {
             pre = str.charAt(i) + "";
             i = 1;
-          //  System.out.println("pre:"+pre);
+            //  System.out.println("pre:"+pre);
         }
         for (; i < str.length(); i++) {
             if (temp.indexOf(str.charAt(i)) == -1) {
                 break;
             }
-            if(stringBuilder.length()==0&&'0'==str.charAt(i)){
+            if (stringBuilder.length() == 0 && '0' == str.charAt(i)) {
                 continue;
             }
             stringBuilder.append(str.charAt(i));
         }
-      //  System.out.println(stringBuilder.toString());
+        //  System.out.println(stringBuilder.toString());
 
         if (stringBuilder.length() > max.length() || stringBuilder.length() > (min.length() - pre.length())) {
             if (pre.equals("+") || pre.equals(""))
@@ -287,47 +287,84 @@ public class Solution {
             else {
                 reuslt = Integer.MIN_VALUE;
             }
-        } else if (stringBuilder.length() == max.length() || stringBuilder.length() == (min.length() - pre.length())){
-           flag1=true;
+        } else if (stringBuilder.length() == max.length() || stringBuilder.length() == (min.length() - pre.length())) {
+            flag1 = true;
             if (pre.equals("+") || pre.equals("")) {
                 for (int j = 0; j < stringBuilder.length(); j++) {
-                    if(stringBuilder.toString().charAt(j)>max.charAt(j)){
-                        flag1=false;
+                    if (stringBuilder.toString().charAt(j) > max.charAt(j)) {
+                        flag1 = false;
                         break;
                     }
-                    if(stringBuilder.toString().charAt(j)<max.charAt(j)){
+                    if (stringBuilder.toString().charAt(j) < max.charAt(j)) {
                         break;
                     }
                 }
-                if(flag1){
-                    reuslt = Integer.valueOf(pre+stringBuilder.toString());
-                }else {
+                if (flag1) {
+                    reuslt = Integer.valueOf(pre + stringBuilder.toString());
+                } else {
                     reuslt = Integer.MAX_VALUE;
                 }
 
             } else {
                 for (int j = 0; j < stringBuilder.length(); j++) {
-                    if(stringBuilder.toString().charAt(j)>min.charAt(j+1)){
-                        flag1=false;
+                    if (stringBuilder.toString().charAt(j) > min.charAt(j + 1)) {
+                        flag1 = false;
                         break;
                     }
-                    if(stringBuilder.toString().charAt(j)<min.charAt(j+1)){
+                    if (stringBuilder.toString().charAt(j) < min.charAt(j + 1)) {
                         break;
                     }
                 }
-                if(flag1){
-                  //  System.out.println("min:"+Integer.MIN_VALUE);
-                    reuslt = Integer.valueOf(pre+stringBuilder.toString());
-                }else {
+                if (flag1) {
+                    //  System.out.println("min:"+Integer.MIN_VALUE);
+                    reuslt = Integer.valueOf(pre + stringBuilder.toString());
+                } else {
                     reuslt = Integer.MIN_VALUE;
                 }
             }
 
-        }else {
-            reuslt = Integer.valueOf((pre+stringBuilder).equals("")||"+-".indexOf(pre+stringBuilder)!=-1?"0":(pre+stringBuilder));
+        } else {
+            reuslt = Integer.valueOf((pre + stringBuilder).equals("") || "+-".indexOf(pre + stringBuilder) != -1 ? "0" : (pre + stringBuilder));
         }
 
 
         return reuslt;
+    }
+
+    public static boolean isPalindrome(int x) {
+        boolean flag = true;
+        if (x < 0) {
+            return false;
+        }
+        String s = String.valueOf(x);
+        int l = 0;
+        int r = s.length() - 1;
+        while (l < r) {
+            if (s.charAt(l++) != s.charAt(r--)) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    public static int maxArea(int[] height) {
+        int max = 0;
+        int l=0;
+        int r=height.length-1;
+       while (l<r){
+           max = Math.max(max,Math.min(height[l],height[r])*(r-l));
+           if(height[l]>height[r]){
+               r--;
+           }else {
+               l++;
+           }
+       }
+        return max;
+    }
+
+    public static String longestCommonPrefix(String[] strs) {
+
+        return null;
     }
 }
