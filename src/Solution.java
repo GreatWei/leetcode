@@ -350,21 +350,42 @@ public class Solution {
 
     public static int maxArea(int[] height) {
         int max = 0;
-        int l=0;
-        int r=height.length-1;
-       while (l<r){
-           max = Math.max(max,Math.min(height[l],height[r])*(r-l));
-           if(height[l]>height[r]){
-               r--;
-           }else {
-               l++;
-           }
-       }
+        int l = 0;
+        int r = height.length - 1;
+        while (l < r) {
+            max = Math.max(max, Math.min(height[l], height[r]) * (r - l));
+            if (height[l] > height[r]) {
+                r--;
+            } else {
+                l++;
+            }
+        }
         return max;
     }
 
+    /**
+     * 最长公共前缀
+     */
     public static String longestCommonPrefix(String[] strs) {
 
-        return null;
+        if (strs == null || strs.length == 0 || strs[0].length() == 0) return "";
+        int len = strs[0].length() - 1;//比较长度
+        int temp =-1;//计数
+            for (int j = 1; j < strs.length && len >= 0; j++)//比较字符串
+            {
+                temp=-1;
+                for (int k = 0; k <= len && k < strs[j].length(); k++) {
+                    if (strs[j].charAt(k) != strs[0].charAt(k)) {
+                        break;
+                    }
+                    temp++;
+                }
+                len=temp;
+            }
+        if (len >= 0) {
+            return strs[0].substring(0, len + 1);
+        } else {
+            return "";
+        }
     }
 }
