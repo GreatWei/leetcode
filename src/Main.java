@@ -51,7 +51,9 @@ public class Main {
       //  System.out.println(Solution.myAtoi("    -88827 6    U"));
       //  System.out.println(Solution.myAtoi("   +0 123"));
        // System.out.println(Solution.isPalindrome(11));
-        int [] a = {1,2};
-        System.out.println(Solution.maxArea(a));
+      //  int [] a = {1,2};
+      //  System.out.println(Solution.maxArea(a));
+        String a[]={"aa",""};
+        System.out.println(Solution.longestCommonPrefix(a));
     }
 }
