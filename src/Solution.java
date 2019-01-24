@@ -1,6 +1,5 @@
 import java.lang.reflect.Parameter;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class Solution {
@@ -370,22 +369,59 @@ public class Solution {
 
         if (strs == null || strs.length == 0 || strs[0].length() == 0) return "";
         int len = strs[0].length() - 1;//比较长度
-        int temp =-1;//计数
-            for (int j = 1; j < strs.length && len >= 0; j++)//比较字符串
-            {
-                temp=-1;
-                for (int k = 0; k <= len && k < strs[j].length(); k++) {
-                    if (strs[j].charAt(k) != strs[0].charAt(k)) {
-                        break;
-                    }
-                    temp++;
+        int temp = -1;//计数
+        for (int j = 1; j < strs.length && len >= 0; j++)//比较字符串
+        {
+            temp = -1;
+            for (int k = 0; k <= len && k < strs[j].length(); k++) {
+                if (strs[j].charAt(k) != strs[0].charAt(k)) {
+                    break;
                 }
-                len=temp;
+                temp++;
             }
+            len = temp;
+        }
         if (len >= 0) {
             return strs[0].substring(0, len + 1);
         } else {
             return "";
         }
+    }
+
+    /**
+     * a + b + c = 0
+     */
+    public static List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> lists = new ArrayList<List<Integer>>();
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length; i++)
+            for (int j = i + 1; j < nums.length; j++)
+                for (int k = j + 1; k < nums.length; k++) {
+                    if ((nums[i] + nums[j] + nums[k]) == 0) {
+                        boolean flag = true;
+                        if (lists.size() > 0) {
+                            for (List<Integer> l : lists) {
+                                if ((l.get(0) == nums[i] &&
+                                        l.get(1) == nums[j] &&
+                                        l.get(2) == nums[k])) {
+                                    flag = false;
+                                    break;
+                                }
+                            }
+
+
+                        }
+                        if (flag) {
+                            List<Integer> list = new ArrayList<Integer>();
+                            list.add(nums[i]);
+                            list.add(nums[j]);
+                            list.add(nums[k]);
+                            System.out.println(list.toString());
+                            lists.add(list);
+                        }
+                    }
+                }
+        return lists;
     }
 }
