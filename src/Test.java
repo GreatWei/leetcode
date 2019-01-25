@@ -1,4 +1,5 @@
 import java.text.NumberFormat;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,6 +24,22 @@ public class Test {
 //        System.out.println(matcher.matches());
 //        System.out.println(Pattern.matches("^[0-9]+([^0-9]+)?|[\\-\\+][0-9]+([^0-9]+)?","  -195454lsfgsdf".trim()));
         System.out.println(Pattern.matches("^[0-9]+([\\s\\S]+)?", "    88827 6    U".trim()));
+        String[] staffs = new String[]{"Tom", "Bob", "Jane"};
+        //  Set<Integer> staffsSet = new HashSet<Integer>(Arrays.asList(staffs));
+        // staffsSet.add("Mary"); // ok
+        //   staffsSet.remove("Tom"); // ok
+
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("b", "4");
+        map.put("a", "5");
+        map.put("c", "3");
+        map.put("d", "5");
+        //通过map.keySet()方法
+        //方法一：通过得到key的值，然后获取value;
+        for (String key : map.keySet()) {
+            String value = map.get(key);
+            System.out.println(key + "  " + value);
+        }
 
     }
 }
