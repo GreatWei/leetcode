@@ -57,6 +57,6 @@ public class Main {
         //  System.out.println(Solution.longestCommonPrefix(a));
         int[] a1 =
                 {-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6};
-        Solution.threeSum(a1);
+       System.out.println( Solution.threeSum(a1));
     }
 }

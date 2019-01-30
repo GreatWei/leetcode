@@ -392,36 +392,55 @@ public class Solution {
      * a + b + c = 0
      */
     public static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> lists = new ArrayList<List<Integer>>();
+        int len = nums.length;
+        List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
-
-        for (int i = 0; i < nums.length; i++)
-            for (int j = i + 1; j < nums.length; j++)
-                for (int k = j + 1; k < nums.length; k++) {
-                    if ((nums[i] + nums[j] + nums[k]) == 0) {
-                        boolean flag = true;
-                        if (lists.size() > 0) {
-                            for (List<Integer> l : lists) {
-                                if ((l.get(0) == nums[i] &&
-                                        l.get(1) == nums[j] &&
-                                        l.get(2) == nums[k])) {
-                                    flag = false;
-                                    break;
-                                }
-                            }
-
-
-                        }
-                        if (flag) {
-                            List<Integer> list = new ArrayList<Integer>();
-                            list.add(nums[i]);
-                            list.add(nums[j]);
-                            list.add(nums[k]);
-                            System.out.println(list.toString());
-                            lists.add(list);
-                        }
+     for (int i :nums){
+         System.out.print(i+" ");
+     }
+     System.out.println();
+        for (int i = 0; i < len; i++) {
+            int opposite = -nums[i];
+            if (i == 0 || nums[i] != nums[i - 1]) {
+                int left = i + 1, right = len - 1;
+                while (left < right) {
+                    int twoSum = nums[left] + nums[right];
+                    if (twoSum == opposite) {
+                        List<Integer> ans = new ArrayList<>();
+                        ans.add(nums[i]);
+                        ans.add(nums[left]);
+                        ans.add(nums[right]);
+                        res.add(ans);
+                        left = moveLeft(nums, left, right);
+                        right = moveRight(nums, left, right);
+                    } else if (twoSum < opposite) {
+                        left = moveLeft(nums, left, right);
+                    } else {
+                        right = moveRight(nums, left, right);
                     }
                 }
-        return lists;
+            }
+        }
+        return res;
+    }
+
+    private static int moveLeft(int[] nums, int left, int right) {
+        int num = nums[left++];
+        while (left <= right) {
+            if (nums[left] != num)
+                break;
+            left++;
+        }
+        return left;
+    }
+
+    private static int moveRight(int[] nums, int left, int right) {
+        int num = nums[right--];
+        while (left <= right) {
+            if (nums[right] != num)
+                break;
+            right--;
+        }
+        return right;
     }
 }
