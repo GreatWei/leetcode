@@ -394,7 +394,7 @@ public class Solution {
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> lists = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
-
+        System.out.println(nums.toString());
         for (int i = 0; i < nums.length; i++)
             for (int j = i + 1; j < nums.length; j++)
                 for (int k = j + 1; k < nums.length; k++) {
