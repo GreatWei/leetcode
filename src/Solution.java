@@ -1,4 +1,5 @@
 import java.lang.reflect.Parameter;
+import java.time.temporal.Temporal;
 import java.util.*;
 import java.util.regex.Pattern;
 
@@ -395,10 +396,10 @@ public class Solution {
         int len = nums.length;
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
-     for (int i :nums){
-         System.out.print(i+" ");
-     }
-     System.out.println();
+        for (int i : nums) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
         for (int i = 0; i < len; i++) {
             int opposite = -nums[i];
             if (i == 0 || nums[i] != nums[i - 1]) {
@@ -442,5 +443,35 @@ public class Solution {
             right--;
         }
         return right;
+    }
+
+    /**
+     * 合并k个排序链表
+     */
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null || lists.length == 0) return null;
+        ListNode first = lists[0];
+        for (int i = 1; i < lists.length; i++) {
+            ListNode temp = new ListNode(0);
+            ListNode temp1 = temp;
+            //归并
+            while (first != null && lists[i] != null) {
+                if (first.val > lists[i].val) {
+                    temp.next = new ListNode(lists[i].val);
+                    lists[i] = lists[i].next;
+                } else {
+                    temp.next = new ListNode(first.val);
+                    first=first.next;
+                }
+                temp = temp.next;
+            }
+            if (first == null) {
+                temp.next=lists[i];
+            } else {
+                temp.next = first;
+            }
+            first = temp1.next;
+        }
+        return first;
     }
 }
