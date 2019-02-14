@@ -474,4 +474,26 @@ public class Solution {
         }
         return first;
     }
+
+    /**
+     * 删除排序数组中的重复项
+     *
+     * */
+    public static int removeDuplicates(int[] nums) {
+        int len = 0;
+        if(nums==null||nums.length==0) return len;
+        int temp = nums[0];
+        len++;
+        int k=1;
+        for (int i =1;i<nums.length;i++){
+
+            if(temp!=nums[i]){
+                len++;
+                temp=nums[i];
+                nums[k]=nums[i];
+                k++;
+            }
+        }
+        return len;
+    }
 }
