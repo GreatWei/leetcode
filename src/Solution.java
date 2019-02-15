@@ -461,12 +461,12 @@ public class Solution {
                     lists[i] = lists[i].next;
                 } else {
                     temp.next = new ListNode(first.val);
-                    first=first.next;
+                    first = first.next;
                 }
                 temp = temp.next;
             }
             if (first == null) {
-                temp.next=lists[i];
+                temp.next = lists[i];
             } else {
                 temp.next = first;
             }
@@ -477,23 +477,70 @@ public class Solution {
 
     /**
      * 删除排序数组中的重复项
-     *
-     * */
+     */
     public static int removeDuplicates(int[] nums) {
         int len = 0;
-        if(nums==null||nums.length==0) return len;
-        int temp = nums[0];
+        if (nums == null || nums.length == 0) return len;
         len++;
-        int k=1;
-        for (int i =1;i<nums.length;i++){
-
-            if(temp!=nums[i]){
-                len++;
-                temp=nums[i];
-                nums[k]=nums[i];
-                k++;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[len - 1] != nums[i]) {
+                nums[len++] = nums[i];
             }
         }
         return len;
+    }
+
+    /**
+     * 搜索旋转排序数组
+     */
+    public int search(int[] nums, int target) {
+        int index = -1;
+        if (nums == null || nums.length == 0) return index;
+        int i = 0;
+        for (; i < nums.length; i++) {
+            if (nums[i] == target) {
+                index = i;
+                break;
+            } else if (nums[i] > target) {
+                break;
+            }
+        }
+        for (int j = nums.length - 1; j > i && index == -1; j--) {
+            if (nums[j] == target) {
+                index = j;
+                break;
+            } else if (nums[j] < target) {
+                break;
+            }
+        }
+
+        return index;
+    }
+
+    /**
+     * 字符串相乘
+     */
+    public String multiply(String num1, String num2) {
+        int next=0;//进位
+        int sumtemp=0;//当前相乘的结果
+        String sum="";//最终结果
+        int i=0;
+        for (;i<num2.length();i++){
+
+            for(int j=num1.length()-1;j>=0;j--){
+                next=0;
+                int num11 = Integer.valueOf(num1.charAt(j));
+                int num22 = Integer.valueOf(num2.charAt(i));
+                sumtemp = num11*num22+next;
+                if(sumtemp>10){
+                    next = sumtemp/10;
+                }
+            }
+            for (int k=0;k<num2.length()-i-1;k++)
+            {
+
+            }
+        }
+        return sum;
     }
 }
