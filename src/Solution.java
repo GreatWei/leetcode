@@ -543,4 +543,37 @@ public class Solution {
         }
         return sum;
     }
+
+    //542. 01 矩阵
+    public int[][] updateMatrix(int[][] matrix) {
+        ArrayList<Integer> arrayListi = new ArrayList<Integer>();
+        ArrayList<Integer> arrayListj = new ArrayList<Integer>();
+        for(int i=0;i<matrix.length;i++)
+            for(int j=0;j<matrix[0].length;j++){
+                if(matrix[i][j]==0){
+                    arrayListi.add(i);
+                    arrayListj.add(j);
+                }
+            }
+
+        for(int i=0;i<matrix.length;i++)
+            for(int j=0;j<matrix[0].length;j++){
+                if(matrix[i][j]==0) continue;
+                else {
+                    int min= matrix.length+matrix[0].length;
+                    for(int k=0;k<arrayListi.size();k++){
+                        int indexi=arrayListi.get(k);
+                        int indexj=arrayListj.get(k);
+                      //  System.out.println(indexi+","+indexj);
+                      min=min>(Math.abs(i-indexi)+Math.abs(j-indexj))?(Math.abs(i-indexi)+Math.abs(j-indexj)):min;
+
+                    }
+                    matrix[i][j]=min;
+                }
+            }
+
+        return matrix;
+    }
+
+
 }
