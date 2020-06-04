@@ -1,5 +1,8 @@
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -41,5 +44,9 @@ public class Test {
             System.out.println(key + "  " + value);
         }
 
+        ConcurrentHashMap hashMap= new ConcurrentHashMap<String,Object>();
+        hashMap.put("1",1);
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        cachedThreadPool.execute(new Thread());
     }
 }

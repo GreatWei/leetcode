@@ -521,23 +521,22 @@ public class Solution {
      * 字符串相乘
      */
     public String multiply(String num1, String num2) {
-        int next=0;//进位
-        int sumtemp=0;//当前相乘的结果
-        String sum="";//最终结果
-        int i=0;
-        for (;i<num2.length();i++){
+        int next = 0;//进位
+        int sumtemp = 0;//当前相乘的结果
+        String sum = "";//最终结果
+        int i = 0;
+        for (; i < num2.length(); i++) {
 
-            for(int j=num1.length()-1;j>=0;j--){
-                next=0;
+            for (int j = num1.length() - 1; j >= 0; j--) {
+                next = 0;
                 int num11 = Integer.valueOf(num1.charAt(j));
                 int num22 = Integer.valueOf(num2.charAt(i));
-                sumtemp = num11*num22+next;
-                if(sumtemp>10){
-                    next = sumtemp/10;
+                sumtemp = num11 * num22 + next;
+                if (sumtemp > 10) {
+                    next = sumtemp / 10;
                 }
             }
-            for (int k=0;k<num2.length()-i-1;k++)
-            {
+            for (int k = 0; k < num2.length() - i - 1; k++) {
 
             }
         }
@@ -548,32 +547,78 @@ public class Solution {
     public int[][] updateMatrix(int[][] matrix) {
         ArrayList<Integer> arrayListi = new ArrayList<Integer>();
         ArrayList<Integer> arrayListj = new ArrayList<Integer>();
-        for(int i=0;i<matrix.length;i++)
-            for(int j=0;j<matrix[0].length;j++){
-                if(matrix[i][j]==0){
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) {
                     arrayListi.add(i);
                     arrayListj.add(j);
                 }
             }
 
-        for(int i=0;i<matrix.length;i++)
-            for(int j=0;j<matrix[0].length;j++){
-                if(matrix[i][j]==0) continue;
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 0) continue;
                 else {
-                    int min= matrix.length+matrix[0].length;
-                    for(int k=0;k<arrayListi.size();k++){
-                        int indexi=arrayListi.get(k);
-                        int indexj=arrayListj.get(k);
-                      //  System.out.println(indexi+","+indexj);
-                      min=min>(Math.abs(i-indexi)+Math.abs(j-indexj))?(Math.abs(i-indexi)+Math.abs(j-indexj)):min;
+                    int min = matrix.length + matrix[0].length;
+                    for (int k = 0; k < arrayListi.size(); k++) {
+                        int indexi = arrayListi.get(k);
+                        int indexj = arrayListj.get(k);
+                        //  System.out.println(indexi+","+indexj);
+                        min = min > (Math.abs(i - indexi) + Math.abs(j - indexj)) ? (Math.abs(i - indexi) + Math.abs(j - indexj)) : min;
 
                     }
-                    matrix[i][j]=min;
+                    matrix[i][j] = min;
                 }
             }
 
         return matrix;
     }
 
+    //56. 合并区间
+
+    /**
+     * 输入: [[1,3],[2,6],[8,10],[15,18]]
+     * 输出: [[1,6],[8,10],[15,18]]
+     * 解释: 区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+     */
+    public int[][] merge(int[][] intervals) {
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        arrayList.add(intervals[0][0]);
+        arrayList.add(intervals[0][1]);
+        for (int i = 1; i < intervals.length; ) {
+
+            i = i + 1;
+
+            while (i < intervals.length) {
+                for (int j = arrayList.size() - 1; j < arrayList.size(); j = j - 2) {
+                    int j1=arrayList.get(j - 1);
+                    int j2=arrayList.get(j);
+                    if ((j1 <= intervals[i][0] && j2 >= intervals[i][1]) ||
+                            (j1 >= intervals[i][0] && j2 <= intervals[i][1]) ||
+                            (j1 <= intervals[i][0] && j2 >= intervals[i][1]) ||
+                            (j1 >= intervals[i][0] && j2 >= intervals[i][1])
+                    ) {
+                        if(j1<intervals[i][0]){
+                            intervals[i][0]=j1;
+                        }
+                        if(j2>intervals[i][1]){
+                            intervals[i][1]=j2;
+                        }
+                        arrayList.remove(j);
+                        arrayList.remove(j-1);
+                    }else{
+
+                    }
+                }
+            }
+            Collections.sort(arrayList);
+        }
+        int row = 2;
+        int ret[][] = new int[row][2];
+        for (int i = row - 1; i >= 0; i--) {
+
+        }
+        return ret;
+    }
 
 }
