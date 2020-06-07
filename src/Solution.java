@@ -591,22 +591,22 @@ public class Solution {
 
             while (i < intervals.length) {
                 for (int j = arrayList.size() - 1; j < arrayList.size(); j = j - 2) {
-                    int j1=arrayList.get(j - 1);
-                    int j2=arrayList.get(j);
+                    int j1 = arrayList.get(j - 1);
+                    int j2 = arrayList.get(j);
                     if ((j1 <= intervals[i][0] && j2 >= intervals[i][1]) ||
                             (j1 >= intervals[i][0] && j2 <= intervals[i][1]) ||
                             (j1 <= intervals[i][0] && j2 >= intervals[i][1]) ||
                             (j1 >= intervals[i][0] && j2 >= intervals[i][1])
                     ) {
-                        if(j1<intervals[i][0]){
-                            intervals[i][0]=j1;
+                        if (j1 < intervals[i][0]) {
+                            intervals[i][0] = j1;
                         }
-                        if(j2>intervals[i][1]){
-                            intervals[i][1]=j2;
+                        if (j2 > intervals[i][1]) {
+                            intervals[i][1] = j2;
                         }
                         arrayList.remove(j);
-                        arrayList.remove(j-1);
-                    }else{
+                        arrayList.remove(j - 1);
+                    } else {
 
                     }
                 }
@@ -620,5 +620,31 @@ public class Solution {
         }
         return ret;
     }
+
+    public int majorityElement(int[] nums) {
+//        int num = nums[0];
+//        HashMap<Integer,Integer> hashMap = new HashMap<Integer, Integer>();
+//        for (int i = 1; i < nums.length ; i++) {
+//            if(hashMap.get(nums[i])==null){
+//                hashMap.put(nums[i],1);
+//            }else {
+//                if((hashMap.get(nums[i])+1)>(nums.length/2)){
+//                    num=nums[i];
+//                    break;
+//                }else {
+//                    hashMap.put(nums[i],hashMap.get(nums[i])+1);
+//                }
+//            }
+//        }
+//        return num;
+        int x=0;
+        int vote=0;
+        for(int num:nums){
+            if(vote==0) x=num;
+            vote+=num==x?1:-1;
+        }
+        return x;
+    }
+
 
 }
