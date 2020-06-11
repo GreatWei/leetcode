@@ -43,10 +43,11 @@ public class Test {
             String value = map.get(key);
             System.out.println(key + "  " + value);
         }
-
+        "".charAt(1);
         ConcurrentHashMap hashMap= new ConcurrentHashMap<String,Object>();
         hashMap.put("1",1);
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         cachedThreadPool.execute(new Thread());
+
     }
 }

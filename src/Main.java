@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Solution solution = new Solution();
+        solution.equals("");
 //        ListNode listNode11 =new ListNode(9);
 //        ListNode listNode12 =new ListNode(1);
 //        ListNode listNode13 =new ListNode(6);
@@ -104,7 +105,7 @@ public class Main {
              int []   nums1={8,9,8,9,8};
         int i=solution.majorityElement(nums);
         System.out.println(i);
-
+        "".equals("");
     }
 
 
