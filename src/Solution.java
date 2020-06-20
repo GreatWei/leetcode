@@ -645,7 +645,34 @@ public class Solution {
         }
         return x;
     }
+    //第k小
+    public int findk(int arr1[],int arr2[],int k){
+        if(arr1.length>arr2.length){
+            int[] tmp=arr1;
+            arr1=arr2;
+            arr2=tmp;
+        }
 
+        int n=arr1.length;
+        int m=arr2.length;
+
+        int left=0;
+        int right=n-1;
+        while (left<right){
+            int i=left+ (right-left+1)/2;
+            int j=k-i;
+            if(arr1[i-1]>arr2[j]){
+                right=i-1;
+            }else {
+                left=i;
+            }
+        }
+
+      //  System.out.println(left);
+
+
+        return Math.max(arr1[left-1],arr2[k-left-1]);
+    }
 
 
 }
