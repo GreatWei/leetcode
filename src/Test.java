@@ -3,6 +3,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,10 +45,17 @@ public class Test {
             System.out.println(key + "  " + value);
         }
         "".charAt(1);
+        "".equals("");
+
+        TreeSet<String> treeSet = new TreeSet<>();
+        treeSet.add("");
+
         ConcurrentHashMap hashMap= new ConcurrentHashMap<String,Object>();
         hashMap.put("1",1);
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         cachedThreadPool.execute(new Thread());
 
+        ReentrantLock reentrantLock = new ReentrantLock();
+        reentrantLock.lock();
     }
 }
