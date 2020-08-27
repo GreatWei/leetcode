@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.CountDownLatch;
 
 public class Main {
@@ -119,9 +118,49 @@ public class Main {
      //   int []arr1={1,5,7,8};
     //    int []arr2={2,3,9,11};
      //   System.out.println(solution.findk(arr2,arr1,5));
-        String s="0123456789";
-        for(char i:s.toCharArray()){
-            System.out.println(i-48);
+      //  System.out.println("KUL".compareTo("NRT"));
+        List<List<String>> lists =new ArrayList<List<String>>();
+//        List<String> stringList1 = new ArrayList<String>();
+//        stringList1.add("JFK");
+//        stringList1.add("KUL");
+//        List<String> stringList2 = new ArrayList<String>();
+//        stringList2.add("JFK");
+//        stringList2.add("NRT");
+//        List<String> stringList3 = new ArrayList<String>();
+//        stringList3.add("NRT");
+//        stringList3.add("JFK");
+//        lists.add(stringList1);
+//        lists.add(stringList2);
+//        lists.add(stringList3);
+
+
+        List<String> stringList1 = new ArrayList<String>();
+        stringList1.add("JFK");
+        stringList1.add("AAA");
+        List<String> stringList2 = new ArrayList<String>();
+        stringList2.add("AAA");
+        stringList2.add("JFK");
+        List<String> stringList3 = new ArrayList<String>();
+        stringList3.add("JFK");
+        stringList3.add("BBB");
+
+        List<String> stringList4 = new ArrayList<String>();
+        stringList3.add("JFK");
+        stringList3.add("CCC");
+
+        List<String> stringList5 = new ArrayList<String>();
+        stringList3.add("CCC");
+        stringList3.add("JFK");
+
+        lists.add(stringList1);
+        lists.add(stringList2);
+        lists.add(stringList3);
+        lists.add(stringList4);
+        lists.add(stringList5);
+
+        List<String> s=solution.findItinerary(lists);
+        for(String s1:s){
+            System.out.println(s1);
         }
     }
 

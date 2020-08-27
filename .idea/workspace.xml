@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="edcd1e8e-8d7a-4592-ac3f-bbd0bb9adfd5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/leetcode/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/leetcode/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,12 +41,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="690" column="23" lean-forward="true" selection-start-line="690" selection-start-column="23" selection-end-line="690" selection-end-column="23" />
+            <state relative-caret-position="111">
+              <caret line="714" column="33" lean-forward="true" selection-start-line="714" selection-start-column="33" selection-end-line="714" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#21243#21251#0" expanded="true" />
-                <element signature="e#21677#21685#0" expanded="true" />
+                <element signature="e#22153#22161#0" expanded="true" />
+                <element signature="e#23144#23152#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,10 +55,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="123" column="35" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
+            <state relative-caret-position="521">
+              <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#18924#18938#0" expanded="true" />
+                <element signature="e#19400#19408#0" expanded="true" />
+                <element signature="e#19524#19532#0" expanded="true" />
+                <element signature="e#19648#19656#0" expanded="true" />
+                <element signature="e#19791#19799#0" expanded="true" />
+                <element signature="e#19905#19913#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,8 +204,8 @@
         <option value="$PROJECT_DIR$/src/Codec.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/Test1.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Solution.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -226,7 +230,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,13 +247,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1598458305059" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1598547246006" />
     <property name="last_opened_file_path" value="E:/TOOL/hadoop-2.10.0/share/hadoop/common/lib/zookeeper-3.4.9.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -355,17 +359,18 @@
       <workItem from="1593537456310" duration="2080000" />
       <workItem from="1594215909357" duration="3380000" />
       <workItem from="1598454841144" duration="3059000" />
+      <workItem from="1598543034359" duration="4265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100679000" />
+    <option name="totallyTimeSpent" value="104944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10731319" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10810811" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -756,6 +761,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -828,31 +840,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="123" column="35" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
+        <state relative-caret-position="521">
+          <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#18924#18938#0" expanded="true" />
+            <element signature="e#19400#19408#0" expanded="true" />
+            <element signature="e#19524#19532#0" expanded="true" />
+            <element signature="e#19648#19656#0" expanded="true" />
+            <element signature="e#19791#19799#0" expanded="true" />
+            <element signature="e#19905#19913#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="690" column="23" lean-forward="true" selection-start-line="690" selection-start-column="23" selection-end-line="690" selection-end-column="23" />
+        <state relative-caret-position="111">
+          <caret line="714" column="33" lean-forward="true" selection-start-line="714" selection-start-column="33" selection-end-line="714" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#21243#21251#0" expanded="true" />
-            <element signature="e#21677#21685#0" expanded="true" />
+            <element signature="e#22153#22161#0" expanded="true" />
+            <element signature="e#23144#23152#0" expanded="true" />
           </folding>
         </state>
       </provider>

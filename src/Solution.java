@@ -637,69 +637,131 @@ public class Solution {
 //            }
 //        }
 //        return num;
-        int x=0;
-        int vote=0;
-        for(int num:nums){
-            if(vote==0) x=num;
-            vote+=num==x?1:-1;
+        int x = 0;
+        int vote = 0;
+        for (int num : nums) {
+            if (vote == 0) x = num;
+            vote += num == x ? 1 : -1;
         }
         return x;
     }
+
     //第k小
-    public int findk(int arr1[],int arr2[],int k){
-        if(arr1.length>arr2.length){
-            int[] tmp=arr1;
-            arr1=arr2;
-            arr2=tmp;
+    public int findk(int arr1[], int arr2[], int k) {
+        if (arr1.length > arr2.length) {
+            int[] tmp = arr1;
+            arr1 = arr2;
+            arr2 = tmp;
         }
 
-        int n=arr1.length;
-        int m=arr2.length;
+        int n = arr1.length;
+        int m = arr2.length;
 
-        int left=0;
-        int right=n-1;
-        while (left<right){
-            int i=left+ (right-left+1)/2;
-            int j=k-i;
-            if(arr1[i-1]>arr2[j]){
-                right=i-1;
-            }else {
-                left=i;
+        int left = 0;
+        int right = n - 1;
+        while (left < right) {
+            int i = left + (right - left + 1) / 2;
+            int j = k - i;
+            if (arr1[i - 1] > arr2[j]) {
+                right = i - 1;
+            } else {
+                left = i;
             }
         }
 
-      //  System.out.println(left);
+        //  System.out.println(left);
 
 
-        return Math.max(arr1[left-1],arr2[k-left-1]);
+        return Math.max(arr1[left - 1], arr2[k - left - 1]);
     }
 
     //17. 电话号码的字母组合
     public List<String> letterCombinations(String digits) {
-        String[][] tmp={{"a","b","c"},{"d","e","f"},{"g","h","i"},{"j","k","l"},{"m","n","o"},{"p","q","r","s"},{"t","u","v"},{"w","x","y","z"}};
+        String[][] tmp = {{"a", "b", "c"}, {"d", "e", "f"}, {"g", "h", "i"}, {"j", "k", "l"}, {"m", "n", "o"}, {"p", "q", "r", "s"}, {"t", "u", "v"}, {"w", "x", "y", "z"}};
 
         LinkedList<String> linkedList = new LinkedList<String>();
-        for(int i=0;i<digits.length();i++){
-            int len=linkedList.size();
+        for (int i = 0; i < digits.length(); i++) {
+            int len = linkedList.size();
 
-            for(int j=0;j<len;j++){
-                String lastStr=linkedList.pollFirst();
-                for(String s:tmp[digits.charAt(i)-50]){
-                    linkedList.addLast(lastStr+s);
+            for (int j = 0; j < len; j++) {
+                String lastStr = linkedList.pollFirst();
+                for (String s : tmp[digits.charAt(i) - 50]) {
+                    linkedList.addLast(lastStr + s);
                 }
             }
-            if(len==0){
-                for(String s:tmp[digits.charAt(i)-50]){
+            if (len == 0) {
+                for (String s : tmp[digits.charAt(i) - 50]) {
                     linkedList.add(s);
                 }
             }
         }
-        List<String> list=new ArrayList<String>(linkedList);
+        List<String> list = new ArrayList<String>(linkedList);
         return list;
 
     }
 
+    public List<String> findItinerary(List<List<String>> tickets) {
 
+        String head = "JFK";
+        String tail = null;
+        boolean first = true;
+        boolean lastIn = true;
+        List<String> resualt = new ArrayList<String>();
+        while (tickets.size() > 0) {
+            int j = 0;
+            boolean flag=false;
+            int i=lastIn?tickets.size()-1:tickets.size()-2;
+
+            for (; i >= 0; i--) {
+
+                List<String> list = tickets.get(i);
+
+            //    System.out.println(list.size());
+                if (tail == null && list.get(0).equals(head)) {
+                    if (first) {
+                        resualt.add(list.get(0));
+                    }
+                    resualt.add(list.get(1));
+                    tail = list.get(1);
+                    j = i;
+                    flag=true;
+                } else if (list.get(0).equals(head) && tail.compareTo(list.get(1)) > 0) {
+                    tail = list.get(1);
+                    resualt.set(resualt.size() - 1, tail);
+                    j = i;
+                }
+
+
+            }
+            tail = null;
+
+            if(!flag){
+                lastIn=false;
+                List<String> arr = new ArrayList<String>();
+              //  System.out.println(resualt.size());
+                arr.add(resualt.get(resualt.size()-2));
+                arr.add(resualt.get(resualt.size()-1));
+                tickets.add(arr);
+                resualt.remove(resualt.size()-1);
+                resualt.remove(resualt.size()-1);
+                if(resualt.size()>0){
+                    head=resualt.get(resualt.size()-1);
+                }else {
+                    head="JFK";
+                    first=true;
+                }
+             }else {
+                lastIn=true;
+                tickets.remove(j);
+                head = resualt.get(resualt.size() - 1);
+                first = false;
+            }
+
+        }
+
+        return resualt;
+
+    }
 
 
 }
