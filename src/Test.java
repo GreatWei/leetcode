@@ -3,6 +3,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,7 +50,10 @@ public class Test {
 
         TreeSet<String> treeSet = new TreeSet<>();
         treeSet.add("");
-
+        AtomicInteger atomicInteger =new  AtomicInteger(1);
+        atomicInteger.set(1);
+        atomicInteger.addAndGet(1);
+        atomicInteger.incrementAndGet();
         ConcurrentHashMap hashMap= new ConcurrentHashMap<String,Object>();
         hashMap.put("1",1);
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();

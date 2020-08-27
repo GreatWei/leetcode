@@ -674,5 +674,32 @@ public class Solution {
         return Math.max(arr1[left-1],arr2[k-left-1]);
     }
 
+    //17. 电话号码的字母组合
+    public List<String> letterCombinations(String digits) {
+        String[][] tmp={{"a","b","c"},{"d","e","f"},{"g","h","i"},{"j","k","l"},{"m","n","o"},{"p","q","r","s"},{"t","u","v"},{"w","x","y","z"}};
+
+        LinkedList<String> linkedList = new LinkedList<String>();
+        for(int i=0;i<digits.length();i++){
+            int len=linkedList.size();
+
+            for(int j=0;j<len;j++){
+                String lastStr=linkedList.pollFirst();
+                for(String s:tmp[digits.charAt(i)-50]){
+                    linkedList.addLast(lastStr+s);
+                }
+            }
+            if(len==0){
+                for(String s:tmp[digits.charAt(i)-50]){
+                    linkedList.add(s);
+                }
+            }
+        }
+        List<String> list=new ArrayList<String>(linkedList);
+        return list;
+
+    }
+
+
+
 
 }

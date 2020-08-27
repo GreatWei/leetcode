@@ -116,10 +116,13 @@ public class Main {
 //       String tmp= codec.serialize(treeNode);
 //        System.out.println(tmp);
 //      System.out.println(tmp.equals(s+","));
-        int []arr1={1,5,7,8};
-        int []arr2={2,3,9,11};
-        System.out.println(solution.findk(arr2,arr1,5));
-
+     //   int []arr1={1,5,7,8};
+    //    int []arr2={2,3,9,11};
+     //   System.out.println(solution.findk(arr2,arr1,5));
+        String s="0123456789";
+        for(char i:s.toCharArray()){
+            System.out.println(i-48);
+        }
     }
 
 
