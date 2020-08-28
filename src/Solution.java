@@ -701,66 +701,50 @@ public class Solution {
     }
 
     public List<String> findItinerary(List<List<String>> tickets) {
-
-        String head = "JFK";
-        String tail = null;
-        boolean first = true;
-        boolean lastIn = true;
         List<String> resualt = new ArrayList<String>();
-        while (tickets.size() > 0) {
-            int j = 0;
-            boolean flag=false;
-            int i=lastIn?tickets.size()-1:tickets.size()-2;
-
-            for (; i >= 0; i--) {
-
-                List<String> list = tickets.get(i);
-
-            //    System.out.println(list.size());
-                if (tail == null && list.get(0).equals(head)) {
-                    if (first) {
-                        resualt.add(list.get(0));
-                    }
-                    resualt.add(list.get(1));
-                    tail = list.get(1);
-                    j = i;
-                    flag=true;
-                } else if (list.get(0).equals(head) && tail.compareTo(list.get(1)) > 0) {
-                    tail = list.get(1);
-                    resualt.set(resualt.size() - 1, tail);
-                    j = i;
-                }
-
-
-            }
-            tail = null;
-
-            if(!flag){
-                lastIn=false;
-                List<String> arr = new ArrayList<String>();
-              //  System.out.println(resualt.size());
-                arr.add(resualt.get(resualt.size()-2));
-                arr.add(resualt.get(resualt.size()-1));
-                tickets.add(arr);
-                resualt.remove(resualt.size()-1);
-                resualt.remove(resualt.size()-1);
-                if(resualt.size()>0){
-                    head=resualt.get(resualt.size()-1);
-                }else {
-                    head="JFK";
-                    first=true;
-                }
-             }else {
-                lastIn=true;
-                tickets.remove(j);
-                head = resualt.get(resualt.size() - 1);
-                first = false;
-            }
-
+        // String tail;
+        if(tickets.size()==1){
+            return tickets.get(0);
         }
+        for (int i = 0; i < tickets.size(); i++) {
+            if ("JFK".equals(tickets.get(i).get(0))) {
+                String tmp = tickets.get(i).get(0) + "," + tickets.get(i).get(1);
 
-        return resualt;
+                List<Integer> indexs = new ArrayList<Integer>();
+                indexs.add(i);
 
+                String  tail = tickets.get(i).get(1);
+                //  System.out.println(tail);
+
+                recursive(tmp, indexs, tickets, resualt, tail);
+            }
+        }
+        // System.out.println(resualt.size());
+
+        return Arrays.asList(resualt.get(0).split(","));
+
+    }
+
+    public void recursive(String tmp, List<Integer> indexs, List<List<String>> tickets, List<String> resualt, String tail) {
+        for (int i = 0; i < tickets.size(); i++) {
+            if (indexs.contains(i)) {
+                continue;}
+            if (tail.equals(tickets.get(i).get(0))) {
+                if ((indexs.size() + 1) == tickets.size()) {
+                    if (resualt.size() > 0) {
+                        if ((tmp + "," + tickets.get(i).get(1)).compareTo(resualt.get(0)) < 0) {
+                            resualt.set(0, tmp + "," + tickets.get(i).get(1));
+                        }
+                    } else {
+                        resualt.add(tmp + "," + tickets.get(i).get(1));
+                    }
+                } else {
+                    List<Integer> indexsNext = new ArrayList<Integer>(indexs);
+                    indexsNext.add(i);
+                    recursive(tmp + "," + tickets.get(i).get(1), indexsNext, tickets, resualt, tickets.get(i).get(1));
+                }
+            }
+        }
     }
 
 
