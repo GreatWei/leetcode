@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b63d931-0e03-41a7-9262-cf192a06f47c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+    <list default="true" id="1533e383-7305-4d6d-80a3-ec88f466ef78" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="leetcode" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1ghppXEgI6ZKcIDkLRJiUVdDlmk" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/TOOL/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="E:\TOOL\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gmNu3q4MqHTX50KAEygoHpeaN7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,26 +30,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="leetcode.editor.cn" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.ReconstructItinerary">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="leetcode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReconstructItinerary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.editor.cn.ReconstructItinerary" />
+  <component name="RunManager">
+    <configuration name="ReverseWordsInAStringIii" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.editor.cn.ReverseWordsInAStringIii" />
       <module name="leetcode" />
       <extension name="coverage">
         <pattern>
@@ -61,8 +50,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ReconstructItinerary" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ReverseWordsInAStringIii" />
       </list>
     </recent_temporary>
   </component>
@@ -71,13 +59,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5b63d931-0e03-41a7-9262-cf192a06f47c" name="Default Changelist" comment="" />
-      <created>1598576862199</created>
+      <changelist id="1533e383-7305-4d6d-80a3-ec88f466ef78" name="Default Changelist" comment="" />
+      <created>1598716026297</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1598576862199</updated>
-      <workItem from="1598576867763" duration="698000" />
-      <workItem from="1598577583024" duration="19079000" />
+      <updated>1598716026297</updated>
+      <workItem from="1598716029169" duration="775000" />
+      <workItem from="1598717959680" duration="23000" />
+      <workItem from="1598718852545" duration="3833000" />
     </task>
     <servers />
   </component>
@@ -85,73 +74,51 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Notifications" timestamp="1598599609529">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="454" y="307" key="#Custom_Plugin_Repositories" timestamp="1598716565039">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1598599609529" />
-    <state x="831" y="275" key="FileChooserDialogImpl" timestamp="1598578011082">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="454" y="307" key="#Custom_Plugin_Repositories/0.0.2560.1400@0.0.2560.1400" timestamp="1598716565039" />
+    <state x="454" y="307" key="#HTTP_Proxy" timestamp="1598716569901">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="831" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598578011082" />
-    <state width="938" height="266" key="GridCell.Tab.0.bottom" timestamp="1598607015198">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="454" y="307" key="#HTTP_Proxy/0.0.2560.1400@0.0.2560.1400" timestamp="1598716569901" />
+    <state x="908" y="632" key="FileChooserDialogImpl" timestamp="1598719246247">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="938" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598607015198" />
-    <state width="938" height="266" key="GridCell.Tab.0.center" timestamp="1598607015198">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="908" y="632" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598719246247" />
+    <state width="1258" height="266" key="GridCell.Tab.0.bottom" timestamp="1598722689340">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="938" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598607015198" />
-    <state width="938" height="266" key="GridCell.Tab.0.left" timestamp="1598607015197">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1258" height="266" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1598722689340" />
+    <state width="1258" height="266" key="GridCell.Tab.0.center" timestamp="1598722689340">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="938" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598607015197" />
-    <state width="938" height="266" key="GridCell.Tab.0.right" timestamp="1598607015198">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1258" height="266" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1598722689340" />
+    <state width="1258" height="266" key="GridCell.Tab.0.left" timestamp="1598722689340">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="938" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598607015198" />
-    <state width="938" height="348" key="GridCell.Tab.1.bottom" timestamp="1598597356327">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1258" height="266" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1598722689340" />
+    <state width="1258" height="266" key="GridCell.Tab.0.right" timestamp="1598722689340">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="938" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598597356327" />
-    <state width="938" height="348" key="GridCell.Tab.1.center" timestamp="1598597356327">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1258" height="266" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1598722689340" />
+    <state x="363" y="291" width="1477" height="716" key="SettingsEditor" timestamp="1598719398114">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="938" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598597356327" />
-    <state width="938" height="348" key="GridCell.Tab.1.left" timestamp="1598597356327">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="363" y="291" width="1477" height="716" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1598719398114" />
+    <state x="960" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1598716031065">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="938" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598597356327" />
-    <state width="938" height="348" key="GridCell.Tab.1.right" timestamp="1598597356327">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="938" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598597356327" />
-    <state x="540" y="263" key="IDE.errors.dialog" timestamp="1598601531060">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598601531060" />
-    <state x="461" y="162" width="1181" height="716" key="SettingsEditor" timestamp="1598595265115">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" width="1181" height="716" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598595265115" />
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1598576868901">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="640" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598576868900" />
-    <state x="608" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598585391772">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="608" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1598585391772" />
-    <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598597246043">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1598597246043" />
-    <state x="636" y="119" width="647" height="801" key="find.popup" timestamp="1598595246020">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="636" y="119" width="647" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598595246020" />
-    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup" timestamp="1598604180944">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="173" width="670" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598604180944" />
+    <state x="960" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598716031065" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/leetcode/editor/cn/ReverseWordsInAStringIii.java</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
