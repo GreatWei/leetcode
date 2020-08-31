@@ -65,6 +65,7 @@ class Solution {
             int keyIndex=queue.poll();
             List<Integer> roomKeys=rooms.get(keyIndex);
             for (Integer key: roomKeys){
+
                 if(!roomKey.contains(key)){
                     roomKey.add(key);
                     queue.offer(key);
