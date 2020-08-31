@@ -29,6 +29,7 @@ package leetcode.editor.cn;
 import java.util.*;
 
 public class ReconstructItinerary {
+
     public static void main(String[] args) {
         Solution solution = new ReconstructItinerary().new Solution();
         List<String> stringList1 = new ArrayList<String>();
