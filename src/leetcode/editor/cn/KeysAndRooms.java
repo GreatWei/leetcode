@@ -54,6 +54,7 @@ public class KeysAndRooms {
         Solution solution = new KeysAndRooms().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
+
 class Solution {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
         TreeSet roomKey= new  TreeSet();

@@ -22,6 +22,7 @@
 // 👍 161 👎 0
 
 package leetcode.editor.cn;
+
 public class RobotReturnToOrigin {
     public static void main(String[] args) {
         Solution solution = new RobotReturnToOrigin().new Solution();
