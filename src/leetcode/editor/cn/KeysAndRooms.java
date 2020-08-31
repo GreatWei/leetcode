@@ -52,6 +52,7 @@ public class KeysAndRooms {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        
         return false;
     }
 }
