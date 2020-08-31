@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1533e383-7305-4d6d-80a3-ec88f466ef78" name="Default Changelist" comment="" />
+    <list default="true" id="1533e383-7305-4d6d-80a3-ec88f466ef78" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +11,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -65,11 +68,48 @@
       <workItem from="1598717959680" duration="23000" />
       <workItem from="1598718852545" duration="3833000" />
       <workItem from="1598836573949" duration="271000" />
+      <workItem from="1598837966758" duration="1095000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:E:/CODE/leetcode/src/leetcode/editor/cn" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="454" y="307" key="#Custom_Plugin_Repositories" timestamp="1598716565039">
@@ -80,10 +120,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="454" y="307" key="#HTTP_Proxy/0.0.2560.1400@0.0.2560.1400" timestamp="1598716569901" />
+    <state x="880" y="292" key="CommitChangelistDialog2" timestamp="1598858937990">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="880" y="292" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1598858937990" />
     <state x="908" y="632" key="FileChooserDialogImpl" timestamp="1598719246247">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="908" y="632" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598719246247" />
+    <state x="1089" y="613" key="Github.CreateGistDialog" timestamp="1598859261006">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1089" y="613" key="Github.CreateGistDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598859261006" />
     <state width="1258" height="266" key="GridCell.Tab.0.bottom" timestamp="1598722689340">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -108,6 +156,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="960" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598716031065" />
+    <state x="1064" y="491" key="git4idea.merge.GitMergeDialog" timestamp="1598859251169">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1064" y="491" key="git4idea.merge.GitMergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598859251169" />
+    <state x="988" y="491" key="git4idea.merge.GitPullDialog" timestamp="1598859079339">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="988" y="491" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598859079339" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
