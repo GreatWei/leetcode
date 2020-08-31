@@ -68,7 +68,8 @@
       <workItem from="1598717959680" duration="23000" />
       <workItem from="1598718852545" duration="3833000" />
       <workItem from="1598836573949" duration="271000" />
-      <workItem from="1598837966758" duration="1095000" />
+      <workItem from="1598837966758" duration="1463000" />
+      <workItem from="1598860113173" duration="423000" />
     </task>
     <servers />
   </component>
@@ -156,14 +157,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="960" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598716031065" />
-    <state x="1064" y="491" key="git4idea.merge.GitMergeDialog" timestamp="1598859251169">
+    <state x="1064" y="491" key="git4idea.merge.GitMergeDialog" timestamp="1598860484881">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1064" y="491" key="git4idea.merge.GitMergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598859251169" />
-    <state x="988" y="491" key="git4idea.merge.GitPullDialog" timestamp="1598859079339">
+    <state x="1064" y="491" key="git4idea.merge.GitMergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598860484881" />
+    <state x="988" y="491" key="git4idea.merge.GitPullDialog" timestamp="1598860522799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="988" y="491" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598859079339" />
+    <state x="988" y="491" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1598860522799" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
