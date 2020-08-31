@@ -43,7 +43,11 @@
 
 package leetcode.editor.cn;
 
+import java.util.LinkedList;
 import java.util.List;
+
+import java.util.Queue;
+import java.util.TreeSet;
 
 public class KeysAndRooms {
     public static void main(String[] args) {
@@ -52,8 +56,24 @@ public class KeysAndRooms {
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-        
-        return false;
+        TreeSet roomKey= new  TreeSet();
+        roomKey.add(0);
+
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.offer(0);
+        while (!queue.isEmpty()){
+            int keyIndex=queue.poll();
+            List<Integer> roomKeys=rooms.get(keyIndex);
+            for (Integer key: roomKeys){
+                if(!roomKey.contains(key)){
+                    roomKey.add(key);
+                    queue.offer(key);
+                }
+            }
+        }
+
+
+        return roomKey.size()==rooms.size()?true:false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
