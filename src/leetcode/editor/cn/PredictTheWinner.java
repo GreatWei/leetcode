@@ -41,29 +41,86 @@ package leetcode.editor.cn;
 public class PredictTheWinner {
     public static void main(String[] args) {
         Solution solution = new PredictTheWinner().new Solution();
+        int arr[] = {3606449, 6, 5, 9, 452429, 7, 9580316, 9857582, 8514433, 9, 6, 6614512, 753594, 5474165, 4, 2697293, 8, 7, 1};
+        int[] arr1 = {2, 1, 5};
+        System.out.println(solution.PredictTheWinner(arr));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public boolean PredictTheWinner(int[] nums) {
-            int left=0;
-            int right=nums.length-1;
-            boolean who=true;
-            int sum1=0;
-            int sum2=0;
-            boolean resualt =recursive(nums,left,right,sum1,sum2,who);
-            return resualt;
+            int len = nums.length;
+            int[][] dp = new int[len][len];
+
+            // dp[i][j]：作为先手，在区间 nums[i..j] 里进行选择可以获得的相对分数
+            for (int i = 0; i < len; i++) {
+                dp[i][i] = nums[i];
+            }
+
+            for (int j = 1; j < len; j++) {
+                for (int i = j - 1; i >= 0; i--) {
+                    dp[i][j] = Math.max(nums[i] - dp[i + 1][j], nums[j] - dp[i][j - 1]);
+                }
+            }
+            return dp[0][len - 1] >= 0;
         }
 
-        public boolean recursive(int[] nums, int left, int right, int sum1, int sum2,boolean who) {
-            if(left>right) return sum1>=sum2;
-            boolean flag=false;
-             if(who){
-                nums[left]-nums[left+1]
-             }
-           else {
 
-           }
+        /*public boolean PredictTheWinner(int[] nums) {
+            int left = 0;
+            int right = nums.length - 1;
+            boolean who = true;
+            int sum1 = 0;
+            int sum2 = 0;
+
+            return recursive(nums, left, right, sum1, sum2, who);
+        }*/
+
+        public boolean recursive(int[] nums, int left, int right, int sum1, int sum2, boolean who) {
+     //       if (nums.length % 2 == 0) return true;
+
+            if (left == right) {
+                if (who) {
+                    sum1 = sum1 + nums[left];
+
+                } else {
+                    sum2 = sum2 + nums[right];
+                }
+                return sum1 >= sum2;
+            }
+            boolean flag = false;
+
+            int comLeft=Math.min(nums[left] - nums[left + 1], nums[left] - nums[right]); ;
+           /* if((nums[left] - nums[left + 1]+ nums[left] - nums[right])>=0){
+                comLeft=Math.min(nums[left] - nums[left + 1], nums[left] - nums[right]);
+            }else {
+                comLeft=Math.min(nums[left] - nums[left + 1], nums[left] - nums[right]);
+            }*/
+            int comRight=Math.min(nums[right] - nums[right - 1], nums[right] - nums[left]);;
+          /*  if((nums[right] - nums[right - 1]+ nums[right] - nums[left])>=0){
+                comRight=Math.min(nums[right] - nums[right - 1], nums[right] - nums[left]);
+            }else {
+                comRight=Math.min(nums[right] - nums[right - 1], nums[right] - nums[left]);
+            }
+*/
+
+
+
+            if (comLeft > comRight) {
+                flag = who ? recursive(nums, left + 1, right, sum1 + nums[left], sum2, !who) : recursive(nums, left + 1, right, sum1, sum2 + nums[left], !who);
+            } else if (comLeft == comRight) {
+                if (nums[left] > nums[right]) {
+                    flag = who ? recursive(nums, left+1, right, sum1 + nums[left], sum2, !who) : recursive(nums, left+1, right , sum1, sum2 + nums[left], !who);
+                } else {
+                    flag = who ? recursive(nums, left , right-1, sum1 + nums[right], sum2, !who) : recursive(nums, left, right-1, sum1, sum2 + nums[right], !who);
+                }
+
+            } else {
+                flag = who?recursive(nums, left, right - 1, sum1 + nums[right], sum2, !who):recursive(nums, left, right - 1, sum1 , sum2+ nums[right], !who);
+            }
+
+
             return flag;
         }
     }
